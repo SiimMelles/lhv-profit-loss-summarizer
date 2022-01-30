@@ -41,7 +41,7 @@ def parse_lines(file_lines):
                             dividends[subrow[1]] += Decimal(subrow[8])
                     i += 1
         i += 1
-    print("--- Profit/Loss from trades --")
+    print("--- Profit/Loss from trades ---")
     gains_table.add_column("Security", list(gains.keys()))
     gains_table.add_column("Profit/Loss", list(gains.values()))
     gains_table.align = "r"

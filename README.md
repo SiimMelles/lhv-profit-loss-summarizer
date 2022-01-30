@@ -1,7 +1,20 @@
 # lhv-profit-loss-summarizer
 
-This script can be used to summarize the realized profit/loss report from LHV online bank.
-Simply export your statement in `.csv` format and drop into project root directory.
-Before runing the script make sure you have downloaded the PrettyTable module using "python -m pip install -U prettytable".
+LHV online bank lists all realized profits by individual trade transactions. 
+This makes it difficult to get a profit/loss summary for each stock symbol.
+This script can be used to summarize the realized profit/loss report as well as dividends received.
 
-Now run the script and you have yourself a summary of the report!
+## Prerequisites
+
+Before running the script make sure you have downloaded the `PrettyTable` module: 
+
+    python -m pip install -U prettytable
+
+## Using the script
+
+* Export your statement for the necessary period in `.csv` format and drop into project root directory.
+* Run the script, and you have yourself a summary of the report!
+
+### Example output:
+
+![Example of the output](output_example.png)
