@@ -1,4 +1,4 @@
-# LHV profit/loss summarizer (Dividends for now)
+# LHV profit/loss summarizer
 
 import csv
 from decimal import Decimal
@@ -17,7 +17,7 @@ def parse_lines(file_lines):
     while i < len(file_lines):
         row = file_lines[i]
         if len(row) == 1 and row[0][0].isdigit():
-            if row[0] == '1. Security transactions':
+            if row[0].startswith('1.'):
                 # Skip header and blank space for now
                 i += 3
                 while len(file_lines[i]) != 0:
@@ -29,7 +29,7 @@ def parse_lines(file_lines):
                             gains[subrow[5]] += Decimal(subrow[20])
                     i += 1
 
-            elif row[0] == '2. Dividend income':
+            elif row[0].startswith('2.'):
                 # Skip header and blank space for now
                 i += 3
                 while len(file_lines[i]) != 0:
